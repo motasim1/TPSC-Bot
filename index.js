@@ -68,26 +68,28 @@ bot.on("message", message => {
       }
       }
     }
+})
 
-    if(message.content === config.prefix + "agree") {
-      if(message.channel.name !== "agree") return;
-      let logs = config.logchannel
-      let modch = message.guild.channels.find("name", logs)
-      if(!modch) return message.reply("Please contact the server owner with the following: No log channel found.").then(message => {
-        message.delete(10000)
-      })
-      let role = message.guild.roles.find("name", "Member")
-      if(!role) return message.reply("Please contact the server owner with the following: No log channel found.").then(message => {
-        message.delete(10000)
-      })
-      message.member.addRole(role)
-      message.author.send("Hey, you just agreed to the guidelines/rules and got the Member role. You may now talk in every channel.")
-      const embed = new Discord.RichEmbed()
-      .setTitle("Guidelines")
-      .setColor("#00ff43")
-      .setDescription(`**${message.author.tag}** just agreed to the guidelines and gained the Member role.`)
-      bot.channels.get(modch.id).send({embed: embed})
-    }
+bot.on("message", message => {
+  if(message.content === config.prefix + "agree") {
+    if(message.channel.name !== "agree") return;
+    let logs = config.logchannel
+    let modch = message.guild.channels.find("name", logs)
+    if(!modch) return message.reply("Please contact the server owner with the following: No log channel found.").then(message => {
+      message.delete(10000)
+    })
+    let role = message.guild.roles.find("name", "Member")
+    if(!role) return message.reply("Please contact the server owner with the following: No log channel found.").then(message => {
+      message.delete(10000)
+    })
+    message.member.addRole(role)
+    message.author.send("Hey, you just agreed to the guidelines/rules and got the Member role. You may now talk in every channel.")
+    const embed = new Discord.RichEmbed()
+    .setTitle("Guidelines")
+    .setColor("#00ff43")
+    .setDescription(`**${message.author.tag}** just agreed to the guidelines and gained the Member role.`)
+    bot.channels.get(modch.id).send({embed: embed})
+}
 })
 
 bot.login(config.token)
