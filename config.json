@@ -3,5 +3,11 @@
   "adminrole" : "Admin",
   "prefix" : "tpsc.",
   "token" : "",
-  "logchannel" : "mod-logs"
+  "logchannel" : "mod-logs",
+  "developers" : [
+    ""
+  ],
+  "owners" : [
+    ""
+  ]
 }

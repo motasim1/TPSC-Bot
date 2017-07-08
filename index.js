@@ -6,11 +6,6 @@ const config = require("./config.json");
 
 var no_perms = "```Sorry, but you do not have the right permissions to execute this command.```"
 
-var developer = user_id => bot.guilds.get('327064568671240195').roles.get('327064946066325514').members.map(member => member.id).indexOf(user_id) > -1;
-var lead_dev = user_id => bot.guilds.get("327064568671240195").roles.get("327065607256408066").members.map(member => member.id).indexOf(user_id) > - 1;
-var bot_support = user_id => bot.guilds.get("327064568671240195").roles.get("327065128925134858").members.map(member => member.id).indexOf(user_id) > - 1;
-var staff = user_id => bot.guilds.get("327064568671240195").roles.get("327065314355314688").members.map(member => member.id).indexOf(user_id) > - 1;
-
 bot.commands = new Discord.Collection()
 bot.aliases = new Discord.Collection()
 
