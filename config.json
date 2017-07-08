@@ -1,0 +1,7 @@
+{
+  "modrole" : "Moderator",
+  "adminrole" : "Admin",
+  "prefix" : "tpsc.",
+  "token" : "",
+  "logchannel" : "mod-logs"
+}
